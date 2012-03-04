@@ -1,5 +1,6 @@
 import random
 import easygui
+# next step is to reduce duplicated code
 # makes a variable
 e='yes'
 # start    
