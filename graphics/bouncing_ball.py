@@ -166,13 +166,13 @@ class Ball(pygame.sprite.Sprite):
 pygame.init()
  
 # Create an 800x600 sized screen
-screen_width = 800
-screen_height = 600
+screen_width = 400
+screen_height = 400
  
 screen = pygame.display.set_mode([screen_width, screen_height])
  
 # Set the title of the window
-pygame.display.set_caption('Pong')
+pygame.display.set_caption('Pong2')
  
 # Create a surface we can draw on
 background = pygame.Surface(screen.get_size())
