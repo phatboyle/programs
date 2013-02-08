@@ -1,0 +1,9 @@
+tree
+duck
+hippo
+bird
+hat
+crow
+mouse
+rat
+lightning

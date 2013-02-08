@@ -1,0 +1,8 @@
+new_file = open("my_notes.txt", 'w')
+new_file.write("get_yelled_at\n")
+new_file.write("program_in_python\n")
+new_file.write("Eat dinner\n")
+new_file.write("Read a book\n")
+new_file.write("go_to_bed\n")
+new_file.write("wake_up")
+new_file.close()

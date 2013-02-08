@@ -44,7 +44,7 @@ class Game(object):
                if event.key == K_w:
                    
                
-        return True
+                return True
 
 
 class Ball(pygame.sprite.Sprite):

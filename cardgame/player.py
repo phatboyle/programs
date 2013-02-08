@@ -1,0 +1,54 @@
+# Listing_23-8.py
+# Copyright Warren Sande, 2009
+# Released under MIT license   http://www.opensource.org/licenses/mit-license.php
+# Version 61  ----------------------------
+
+# Crazy Eights - Getting the player's choice
+
+def player_turn():
+    global deck, p_hand, blocked, up_card, active_suit
+    valid_play = False
+    is_eight = False
+    print "\nYour hand: ",
+    for card in p_hand:
+        print card.short_name,
+    print "    Up card: ", up_card.short_name
+    if up_card.rank == '8':
+        print"    Suit is", active_suit
+    print "What would you like to do? ",
+    response = raw_input ("Type a card to play or 'Draw' to take a card: ")
+    
+    # keep trying untile the player enters something valid
+    while not valid_play:                                                     
+        selected_card = None               # get a card the player holds, or "draw"
+        while selected_card == None:                                          
+            if response.lower() == 'draw':
+                # if choice is "draw" get a card from the deck and add it
+                #   to the player's hand
+                valid_play = True
+                if len(deck) > 0:   
+                    card = random.choice(deck)                                
+                    p_hand.append(card)                                       
+                    deck.remove(card)                                         
+                    print "You drew", card.short_name                         
+                else:                                                         
+                    print "There are no cards left in the deck"               
+                    blocked += 1                                              
+                return                                                      
+            else:
+                for card in p_hand:       # check if the selected card is in the player's hand
+                    if response.upper() == card.short_name:                   
+                        selected_card = card
+                if selected_card == None:
+                    response = raw_input("You don't have that card. Try again:")
+    
+        if selected_card.rank == '8':     # playing an 8 is always legal                                  
+            valid_play = True
+            is_eight = True
+        elif selected_card.suit  == active_suit:                              
+            valid_play = True
+        elif selected_card.rank  == up_card.rank:                             
+            valid_play = True
+                                    
+        if not valid_play:
+            response = raw_input("That's not a legal play.  Try again: ")

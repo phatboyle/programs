@@ -16,7 +16,7 @@ print(code)
 #for l in letters:
 #    print(numbers[l])
     #print(numbers[l])
-print("i am waiting for a code")8
+print("i am waiting for a code")
 
 secret=input()
 

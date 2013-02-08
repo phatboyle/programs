@@ -1,0 +1,20 @@
+self.name = raw_input("what is your name ")
+self.AccountNumber = raw_input("what do you want your Acount number to be ")
+self.balance = raw_input("how much money are you going to put in your Account ")
+Q = raw_input("are you going to make a deposit or a withdrawal or do you just want to see your balance ")
+if Q == 'deposit':
+    account(depsit)
+elif Q == 'withdrawal':
+    account(withdrawal)
+elif Q == 'showbalance':
+    account(showBalance)
+self.name = raw_input("what is your name ")
+self.AccountNumber = raw_input("what do you want your inerest Acount number to be ")
+self.balance = raw_input("how much money are you going to put in your interest Account ")
+Q = raw_input("are you going to make a deposit or a withdrawal or do you just want to see your balance ")
+if Q == 'deposit':
+    InterestAccount(deposit)
+elif Q == 'withdrawal':
+    InterestAccount(withdrawal)
+elif Q == 'showbalance':
+    InterestAccount(showBalance)

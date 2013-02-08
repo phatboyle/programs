@@ -1,11 +1,11 @@
 import random
+def coin():
+    nside = random.randint(1,2)
+    if nside==1:
+        side = 'heads'
+    else:
+        side = 'tails'
+    return side
 
-print("which one 1 2 3 4 5 6")
-pick=input()
-die=random.randint(1,6)
-if pick==die:
-    print("you are correct")
-else:   
-      print("you are wrong")
-
-
+side = coin()
+print side

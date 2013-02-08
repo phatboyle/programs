@@ -1,0 +1,72 @@
+Python 2.7.2 (v2.7.2:8527427914a2, Jun 11 2011, 15:22:34) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+Type "copyright", "credits" or "license()" for more information.
+>>> name = fartface
+
+Traceback (most recent call last):
+  File "<pyshell#0>", line 1, in <module>
+    name = fartface
+NameError: name 'fartface' is not defined
+>>> name = 'fartface'
+>>> name.startswith(f)
+
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    name.startswith(f)
+NameError: name 'f' is not defined
+>>> name.startswith('f')
+True
+>>> name.startswith('flop')
+False
+>>> ================================ RESTART ================================
+>>> 
+What is your name? ryan
+How old are you? 8
+What is your favorite color? red
+your name is  ryan you are 8  years old and you like  red
+>>> lulu
+
+Traceback (most recent call last):
+  File "<pyshell#5>", line 1, in <module>
+    lulu
+NameError: name 'lulu' is not defined
+>>> b_family = []
+>>> b_family.append('pat')
+>>> b_family.extend('tracy','ryan','elena','lulu')
+
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    b_family.extend('tracy','ryan','elena','lulu')
+TypeError: extend() takes exactly one argument (4 given)
+>>> b_family.extend(['tracy','ryan','elena','lulu'])
+>>> b_famiy
+
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    b_famiy
+NameError: name 'b_famiy' is not defined
+>>> b_family
+['pat', 'tracy', 'ryan', 'elena', 'lulu']
+>>> f_side = ['luci','tom']
+>>> m_side = ['cindy','gl','dolores','john']
+>>> g_parents = [m_side,f_side]
+>>> parents = ['tracy','pat']
+>>> kids = ['ryan','elena']
+>>> b_family = [parents,kids,g_parents]
+>>> b_family
+[['tracy', 'pat'], ['ryan', 'elena'], [['cindy', 'gl', 'dolores', 'john'], ['luci', 'tom']]]
+>>> pets = 'lulu'
+>>> b_family.insert(0)
+
+Traceback (most recent call last):
+  File "<pyshell#20>", line 1, in <module>
+    b_family.insert(0)
+TypeError: insert() takes exactly 2 arguments (1 given)
+>>> b_family.insert(0, 'lulu')
+>>> b_family
+['lulu', ['tracy', 'pat'], ['ryan', 'elena'], [['cindy', 'gl', 'dolores', 'john'], ['luci', 'tom']]]
+>>> 3.3*9/5-459.67
+-453.73
+>>> 5.2*9/5-459.67
+-450.31
+>>> 
