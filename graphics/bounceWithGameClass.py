@@ -79,6 +79,9 @@ class Game(object):
             self.ball.rect.bottom = self.screenHeight
             self.ball.vely *= -1
 
+        # give a little of the paddle's velocity to the ball
+        self.ball.vely += hitpaddle.velocity/3.0
+
 
 
 class Ball(pygame.sprite.Sprite):

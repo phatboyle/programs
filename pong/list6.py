@@ -67,28 +67,27 @@ clock = pygame.time.Clock()
 # gets bouncing ball
 a = random.randint(1,640)
 b = random.randint(100,150)
-myBall = MyBallClass('wackyball.bmp', [5,5], [a,b])
+myBall = MyBallClass('wackyball.bmp', [1,1], [a,b]) # initializes the ball
 
 #  makes the paddle
 paddle = MyPaddleClass([270,400])  
 paddleGroup = pygame.sprite.Group(paddle)
 # makes the bricks
 brick_list = []
-def bricker(brick_list):
-    x = 40
-    y = 50
-    pos = [x,y]
-    for i in range (1,4):
-        for j in range(1,8):
-            brick = MyBrickClass([x,y], brickSize)
-            brick_list.append(brick)
-            x = x + brickWidth + 5
-        brickGroup = pygame.sprite.Group(brick_list)
-        screen.blit(brickGroup,pos)
-        y = y + brickHeight+5
-        x=40
-    pygame.display.flip()
-    return brickGroup
+
+# updated by Pat
+x = 40
+y = 50
+for i in range (1,4):
+    for j in range(1,8):
+        brick = MyBrickClass([x,y], brickSize)
+        brick_list.append(brick)
+        x = x + brickWidth + 5
+        screen.blit(brick.image, [x,y]) # blit each brick as you make them
+    brickGroup = pygame.sprite.Group(brick_list) 
+    y = y + brickHeight+5
+    x=40
+pygame.display.flip()   # flip
     
 lives = 3
 
@@ -102,7 +101,7 @@ paddlePos2=0
 
 while True:
     # says how fast the loop will run(in milliseconds)
-    clock.tick(31)
+    clock.tick(60)
     screen.fill([255,255,255])
     
     font = pygame.font.Font(None,50)
@@ -129,7 +128,7 @@ while True:
         paddleVelocity=0
     #print paddlePos1, paddlePos2, paddleVelocity   
 
-    if pygame.sprite.spritecollide(myBall,paddleGroup, False):
+    if pygame.sprite.spritecollide(myBall,paddleGroup, False):  # paddle collision and physics for ball
         myBall.speed[1] = -myBall.speed[1]
         myBall.speed[0]= myBall.speed[0]+paddleVelocity/5
         
@@ -146,7 +145,7 @@ while True:
         brick.remove
         points = points + 1
         m = m + 1
-    if myBall.rect.top >= screen.get_rect() .bottom:
+    if myBall.rect.top >= screen.get_rect().bottom:
         lives = lives - 1
         pygame.time.delay(2000)
         myBall.rect.topleft = [50,50]
@@ -156,7 +155,7 @@ while True:
         m=0
         lives = lives + 1
     if lives == 0:
-        sys.exit()
+        sys.exit()  # TODO:  maybe you should print a message?
     if myBall.speed[1]>=100:
         myBall.speed = 20
     # move the ball
