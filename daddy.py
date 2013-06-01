@@ -12,12 +12,6 @@ def guess(low,high):
 	round_up(the_guess)
 	return the_guess
 
-
-# print guess to user
-# ask user if it's the number.  They will reply, yes, or lower or higher
-# if yes, then finish
-# recalculate low/high based on what the user says
-# loop
 low = 1
 high = 100
 while True:
